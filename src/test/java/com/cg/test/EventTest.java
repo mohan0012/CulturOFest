@@ -1,4 +1,4 @@
-package com.cg;
+/*package com.cg.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -25,12 +25,9 @@ public class EventTest {
 	@Autowired
 	private UserRegistrationService userser;
 	
-	@Test
-	void contextLoads() {
-	}
 	
 	
-	  /*@Test 
+	  @Test 
 	  public void addEventTest() { 
 		  event.setName("Holi");
 	  event.setAmount(5000); 
@@ -48,12 +45,12 @@ public class EventTest {
 	  }
 	 
 		
-		 * @Test public void getAllEvents() {
-		 * 
-		 * assertEquals(event.getName(),"null");
-		 * assertNotEquals(event.getAmount(),"null");
-		 * 
-		 * }
+		  @Test public void getAllEvents() {
+		  
+		  assertEquals(event.getName(),"null");
+		  assertNotEquals(event.getAmount(),"null");
+		  
+		  }
 		 
 	 	
 		
@@ -61,10 +58,10 @@ public class EventTest {
 		  public void deleteEventTest() 
 		  { 
 		  Event event=new Event();
-		  event.setEventId(1); 
+		  event.setId(1); 
 		  ser.deleteEvent(event); 
 		  }
-		  */
+		  
 	  
 	  @Test 
 	  public void deleteUserDetailsTest() 
@@ -77,4 +74,4 @@ public class EventTest {
 		  
 		 
 	
-}
+}*/
