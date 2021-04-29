@@ -1,4 +1,4 @@
-/*package com.cg;
+package com.cg;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -23,6 +23,7 @@ import com.cg.service.EventService;
 @SpringBootTest
 class EventApplicationTests {
    @MockBean
+   @Autowired 
    	private EventRepository eventRepository;
    
 	@Autowired
@@ -34,7 +35,7 @@ class EventApplicationTests {
 	void contextLoads() {
 	}
 	
-	@Test
+	/*@Test
 	void addEventTest() {
 		Event e=new Event();
 		e.setName("chackde");
@@ -47,22 +48,22 @@ class EventApplicationTests {
 		Mockito.when(eventRepository.save(e)).thenReturn(e);
         assertThat(eventService.createEvent(e)).isEqualTo(e);
 		
-		}
-	
-	
+		}*/
 	
 	@Test
+	public void deleteEventTest() {
+		Event event=new Event();
+		event.setId(1);
+		eventService.deleteEvent(event);	
+	}
+	
+	/*@Test
 	void deleventTest() {
 	Event e=new Event();
 	e.setId(10l);
-	e.setName("chackde");
-	e.setAmount(90);
-	e.setDescription("All age groups are allowed");
-	e.setVenue("Hyderabad");
-	e.setEventDate("22/09/2021");
+	
 		
     eventService.deleteEvent(e);
-	
+	}*/
 }
-}*/
 	
