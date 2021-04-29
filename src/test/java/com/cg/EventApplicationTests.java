@@ -1,4 +1,4 @@
-package com.cg;
+/*package com.cg;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -64,5 +64,5 @@ class EventApplicationTests {
     eventService.deleteEvent(e);
 	
 }
-}
+}*/
 	
