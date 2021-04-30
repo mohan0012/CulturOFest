@@ -3,6 +3,7 @@ package com.cg.service;
 import java.util.Optional;
 import java.util.List;
 
+import com.cg.exception.EventNotFoundException;
 import com.cg.model.Event;
 
 public interface EventService {
@@ -11,9 +12,11 @@ public interface EventService {
 	
 	public void deleteEvent(Event event);
 	
-	public Optional<Event> getEventById(long id);
+	public Event getEventById(long id) throws EventNotFoundException;
 	 
 	public List<Event> getEventByName(String name); 
+	
+	public List<Event> getAllEvent() throws EventNotFoundException;
 	 	
 	
 }

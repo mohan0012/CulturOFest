@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 
@@ -45,15 +46,16 @@ public class EventController {
 		}
 		
 		 @GetMapping("/event")
-		 public List<Event> getAllEvents(){ 
-			 return evtRepo.findAll();
+		 public List<Event> getAllEvents() throws EventNotFoundException{ 
+			 List<Event> le=evtService.getAllEvent();
+			 return le;
 			 }
 		 	
 		  @GetMapping("/events/{id}")
 		  public ResponseEntity<Event> getEventById(@PathVariable(value="id") long evtid) throws EventNotFoundException 
 		  {
-			  Event event=evtService.getEventById(evtid).orElseThrow(()->new EventNotFoundException("sorry!! no event found")); 
-			  return ResponseEntity.ok().body(event);
+		
+			  return new ResponseEntity<Event>(evtService.getEventById(evtid),HttpStatus.FOUND);
 	      }
 		  @GetMapping("/event/{name}")
 		    public List<Event> getEventByName(@PathVariable(value="name") String name)
